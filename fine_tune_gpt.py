@@ -11,7 +11,20 @@ def load_dataset(train_file, test_file, tokenizer):
     return train_dataset, test_dataset
 
 def main():
-    pass
+    # Set the model and tokenizer
+    # model_name can be "gpt2", "gpt2-medium", "gpt2-large", or "gpt2-xl"
+    model_name = 'gpt2'
+    tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+    model = GPT2LMHeadModel.from_pretrained(model_name)
+
+    # Set training and testing dataset files
+    train_file = 'path/to/your/train_data.txt'
+    test_file = 'path/to/your/test_data.txt'
+    # Remember to replace 'path/to/your/train_data.txt' and 'path/to/your/test_data.txt' 
+    # with the actual file paths of your training and testing datasets before running the script.
+
+    # Load datasets
+    train_dataset, test_dataset = load_dataset(train_file, test_file, tokenizer)
 
 if __name__ == '__main__':
     main()
