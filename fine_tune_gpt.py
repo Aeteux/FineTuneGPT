@@ -56,7 +56,10 @@ def main():
     # Fine-tune the model
     # The train() method starts the fine-tuning process using the provided datasets and settings
     trainer.train()
-
+    
+    # Save the fine-tuned model
+    # After training, save the fine-tuned model to the specified output directory
+    trainer.save_model('output/fine_tuned_gpt')
 
 
 if __name__ == '__main__':
