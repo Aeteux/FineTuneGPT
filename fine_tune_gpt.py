@@ -44,6 +44,20 @@ def main():
         warmup_steps=200,
         prediction_loss_only=True,
     )
+    # Initialize trainer
+    # Pass the model, training arguments, data collator, and datasets to the Trainer object
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        data_collator=data_collator,
+        train_dataset=train_dataset,
+        eval_dataset=test_dataset,
+    )
+    # Fine-tune the model
+    # The train() method starts the fine-tuning process using the provided datasets and settings
+    trainer.train()
+
+
 
 if __name__ == '__main__':
     main()
